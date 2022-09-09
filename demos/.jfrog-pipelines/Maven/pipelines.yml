@@ -19,12 +19,12 @@ resources:
   - name: sample_info
     type: BuildInfo
     configuration:
-      sourceArtifactory: art
+      sourceArtifactory: ARTIFACTORY_INTEGRATION
 
   - name: sample_spec
     type: FileSpec
     configuration:
-      sourceArtifactory: art
+      sourceArtifactory: ARTIFACTORY_INTEGRATION
       pattern: '*'
       buildName: ${JFROG_CLI_BUILD_NAME}
       buildNumber: ${JFROG_CLI_BUILD_NUMBER}
@@ -42,7 +42,7 @@ pipelines:
             JFROG_CLI_BUILD_NAME: ${pipeline_name}_maven
             JFROG_CLI_BUILD_NUMBER: ${run_id}
           integrations:
-            - name: art
+            - name: ARTIFACTORY_INTEGRATION
           inputResources:
             - name: sample_repo
           outputResources:
@@ -82,14 +82,14 @@ pipelines:
           affinityGroup: docker
           dockerFileLocation: "."
           dockerFileName: Dockerfile
-          dockerImageName: 192.168.56.2:8082/docker-local/simpleserver
+          dockerImageName: mtnv-rancher03.na.intelsat.com::32082/docker-local/simpleserver
           dockerImageTag: ${run_id}
           inputResources:
             - name: sample_simpleserver
             - name: sample_spec
               trigger: false
           integrations:
-            - name: art
+            - name: ARTIFACTORY_INTEGRATION
 
       - name: push
         type: DockerPush
@@ -101,6 +101,6 @@ pipelines:
           inputSteps:
             - name: dbuild
           integrations:
-            - name: art
+            - name: ARTIFACTORY_INTEGRATION
 
 
