@@ -3,16 +3,16 @@ resources:
   - name: sample_repo
     type: GitRepo
     configuration:
-      path: trriplejay/step_samples
-      gitProvider: github
+      path: torellrobinson/step_samples
+      gitProvider: GitHub_Integration
       branches:
         include: ^master$
 
   - name: sample_simpleserver
     type: GitRepo
     configuration:
-      gitProvider: github
-      path: trriplejay/simpleserver
+      gitProvider: GitHub_Integration
+      path: torellrobinson/simpleserver
       branches:
         include: "^master$"
 
