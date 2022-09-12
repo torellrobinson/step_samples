@@ -57,13 +57,13 @@ pipelines:
           sourceLocation: demos/Maven/sample-project
 
 
-          resolverSnapshotRepo: maven-snapshot-remote
+          resolverSnapshotRepo: maven-snapshot-remote1
 
 
           deployerSnapshotRepo: maven-snapshot-local
 
 
-          resolverReleaseRepo: maven-release-remote
+          resolverReleaseRepo: maven-release-remote1
 
 
           deployerReleaseRepo: maven-release-local
