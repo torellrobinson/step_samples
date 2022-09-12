@@ -51,7 +51,7 @@ pipelines:
           autoPublishBuildInfo: true
 
 
-          mvnCommand: clean install
+          mvnCommand: clean install -e
 
 
           sourceLocation: demos/Maven/sample-project
