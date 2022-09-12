@@ -82,7 +82,7 @@ pipelines:
           affinityGroup: docker
           dockerFileLocation: "."
           dockerFileName: Dockerfile
-          dockerImageName: mtnv-rancher03.na.intelsat.com::32082/docker-local/simpleserver
+          dockerImageName: mtnv-rancher03.na.intelsat.com:32082/docker-local/simpleserver
           dockerImageTag: ${run_id}
           inputResources:
             - name: sample_simpleserver
